@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/hotel-price-aggregator/static/css/main.5a5fc575.css",
-    "main.js": "/hotel-price-aggregator/static/js/main.910d819b.js",
+    "main.js": "/hotel-price-aggregator/static/js/main.44456400.js",
     "index.html": "/hotel-price-aggregator/index.html",
     "main.5a5fc575.css.map": "/hotel-price-aggregator/static/css/main.5a5fc575.css.map",
-    "main.910d819b.js.map": "/hotel-price-aggregator/static/js/main.910d819b.js.map"
+    "main.44456400.js.map": "/hotel-price-aggregator/static/js/main.44456400.js.map"
   },
   "entrypoints": [
     "static/css/main.5a5fc575.css",
-    "static/js/main.910d819b.js"
+    "static/js/main.44456400.js"
   ]
 }
