@@ -1,0 +1,105 @@
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Jost&family=Libre+Baskerville&family=Oxygen&display=swap");
+
+.outter-container {
+  clear: both;
+  margin-bottom: 24px;
+}
+
+.inner-container {
+  width: 70%;
+  box-shadow: 1px 2px 3px 4px rgba(12, 12, 12, 0.2);
+  border-radius: 10px;
+  height: 260px;
+  display: flex;
+  padding: 20px;
+  margin: auto;
+}
+
+.productImage {
+  flex: 0 0 auto;
+}
+
+.product-info {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+}
+.product-info h1 {
+  font-family: "Merriweather", serif;
+  color: #1486eb;
+  align-self: flex-start;
+  margin-left: 40px;
+  width: 80%;
+}
+
+.product-info h4 {
+  font-family: "Libre Baskerville", serif;
+  align-self: flex-start;
+  margin: 15px 40px;
+  display: inline;
+}
+
+.product-info h4 span {
+  font-weight: 300;
+  font-style: normal;
+  font-family: serif;
+}
+
+.ratings {
+  word-break: break-all;
+  padding: 10px;
+  background-color: #1478dd;
+  width: 42px;
+  height: 45px;
+  border-radius: 10px;
+  align-self: flex-end;
+  font-size: larger;
+  font-weight: bolder;
+  color: white;
+}
+
+.ratings_word {
+  margin-right: 16px;
+  font-size: large;
+  font-family: "Jost", sans-serif;
+}
+
+.room_price {
+  font-size: 18px;
+  font-family: "Oxygen", sans-serif;
+}
+
+.room_price b {
+  color: #85bb65;
+  font-size: 22px;
+}
+
+.rating_container {
+  align-self: flex-end;
+  position: absolute;
+}
+
+.price_container {
+  margin-top: auto;
+  align-self: flex-end;
+}
+
+.room-types {
+  margin: 0px 0px 0px 40px;
+  color: #34495e;
+}
+
+.room-types b {
+  margin-top: 20px;
+  color: #f42c15;
+}
+
+.new_merch {
+  font-size: 14px;
+  background-color: orange;
+  padding: 5px;
+  color: #042080;
+  letter-spacing: 0.2px;
+  border-radius: 5px;
+}

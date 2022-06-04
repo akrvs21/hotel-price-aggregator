@@ -1,0 +1,51 @@
+.myLoader {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 3px dashed #1478dd;
+  animation: rotate 2s infinite linear;
+  animation-direction: alternate-reverse;
+}
+
+@keyframes rotate {
+  /* from {
+        transform: rotate(0deg) scale(1);
+    }
+    to {
+        transform: rotate(360deg) scale(1.5);
+    } */
+
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  10% {
+    transform: rotate(36deg) scale(1.05);
+  }
+  20% {
+    transform: rotate(72deg) scale(1.1);
+  }
+  30% {
+    transform: rotate(108deg) scale(1.15);
+  }
+  40% {
+    transform: rotate(144deg) scale(1.2);
+  }
+  50% {
+    transform: rotate(180deg) scale(1.25);
+  }
+  60% {
+    transform: rotate(216deg) scale(1.3);
+  }
+  70% {
+    transform: rotate(252deg) scale(1.35);
+  }
+  80% {
+    transform: rotate(288deg) scale(1.4);
+  }
+  90% {
+    transform: rotate(324deg) scale(1.45);
+  }
+  100% {
+    transform: rotate(360deg) scale(1.5);
+  }
+}

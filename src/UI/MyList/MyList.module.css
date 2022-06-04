@@ -1,0 +1,16 @@
+.myList {
+    width: 620px;
+    min-width: 320px;
+    background-color: #e0e0de;
+    font-size: 14px;
+    list-style: none;
+    clear: both;
+    position: absolute;
+    top: 49px;
+    left: 155px;
+    display: none;
+}
+.myList li {
+    border: 1px solid gray;
+    padding: 20px;
+}
