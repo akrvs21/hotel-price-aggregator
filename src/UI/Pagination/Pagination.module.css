@@ -28,5 +28,15 @@
   font-size: 22px;
   font-family: "Anton", sans-serif;
   color: #0b196d;
-  background-color: #86FC96;
+  background-color: #86fc96;
+}
+
+@media only screen and (max-width: 600px) {
+  .pagination {
+    padding: 15px;
+  }
+  .pageItem {
+    width: 41px;
+    font-size: 21px;
+  }
 }

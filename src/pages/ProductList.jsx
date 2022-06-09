@@ -2,16 +2,18 @@ import React, { useState, useEffect, useMemo } from "react";
 import ProductItem from "../Components/ProductItem";
 import MyNavbar from "../UI/MyNavbar/MyNavbar";
 import MySearchBar from "../UI/MySearchBar/MySearchBar";
-
 import axios from "axios";
 import MyLoader from "../UI/Loader/MyLoader";
 import Pagination from "../UI/Pagination/Pagination";
+import MyModal from "../UI/MyModal/MyModal";
 
 const ProductList = () => {
   const [hotelList, setHotelList] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [postPerPage, setPostPerPage] = useState(5);
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
+  const [isActive, setIsActive] = useState(false);
+  const [currentLocation, setCurrentLocation] = useState("");
 
   // Get user location by IP
   const getCurrentLocation = () => {
@@ -65,11 +67,13 @@ const ProductList = () => {
     let localHotels = JSON.parse(sessionStorage.getItem("hotelList"));
     if (localHotels) {
       console.log("if");
+      setIsLoading(false);
       setHotelList(localHotels);
     } else {
       console.log("else");
       getCurrentLocation().then((currentLocation) => {
-        console.log("Current city ", currentLocation.city);
+        setCurrentLocation(currentLocation.city);
+        console.log("Current city ", currentLocation);
         const options = {
           method: "GET",
           url: "https://booking-com.p.rapidapi.com/v1/hotels/locations",
@@ -116,19 +120,38 @@ const ProductList = () => {
 
   return (
     <>
-      <MyNavbar />
+      <MyModal
+        currentPosts={currentPosts}
+        setIsActive={setIsActive}
+        isActive={isActive}
+      />
+      <MyNavbar isActive={isActive} setIsActive={setIsActive} />
       <MySearchBar
         setCurrentPage={setCurrentPage}
         setIsLoading={setIsLoading}
         getHotelsInLocation={getHotelsInLocation}
       />
-
+      {/* <span>Current location: {currentLocation}</span> */}
       {isLoading ? (
         <div
           style={{ display: "flex", justifyContent: "center", clear: "both" }}
         >
           <MyLoader />
         </div>
+      ) : !hotelList.length ? (
+        <>
+          <h1
+            style={{
+              color: "red",
+              width: 650,
+              display: "flex",
+              margin: "auto",
+            }}
+          >
+            Sorry, there are no hotels in your area that could be provided by
+            Booking.com service
+          </h1>
+        </>
       ) : (
         currentPosts.map((hotel) => (
           <ProductItem key={hotel.hotel_id} hotel={hotel} />

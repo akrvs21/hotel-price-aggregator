@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import cl from "./MyInput.module.css";
 
-const MyInput = ({ setuserInput, getHotelsInLocation }) => {
+const MyInput = ({ setuserInput }) => {
   return (
     <div>
       <input
@@ -9,7 +9,7 @@ const MyInput = ({ setuserInput, getHotelsInLocation }) => {
         placeholder="Where are you going?"
         className={cl.myInput}
         onChange={(e) => setuserInput(e.target.value)}
-      ></input>
+      />
     </div>
   );
 };

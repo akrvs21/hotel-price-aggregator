@@ -1,0 +1,1 @@
+export const SAVE_HOTEL = 'SAVE_HOTEL';

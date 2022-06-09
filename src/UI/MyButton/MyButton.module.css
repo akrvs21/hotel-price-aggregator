@@ -1,15 +1,22 @@
-@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap");
 .myButton {
-    float: left;
-    padding: 13.5px;
-    font-size: 22px;
-    border: 1px solid #000;
-    cursor: pointer;
-    font-family: 'Alfa Slab One', cursive;
-    letter-spacing: 1.5px;
-    background-color: #86FC96;
-    transition: color .3s ease-in-out;
+  float: left;
+  padding: 13.5px;
+  font-size: 22px;
+  border: 1px solid #000;
+  cursor: pointer;
+  font-family: "Alfa Slab One", cursive;
+  letter-spacing: 1.5px;
+  background-color: #86fc96;
+  transition: color 0.3s ease-in-out;
 }
 .myButton:hover {
-    color: #1478dd;
+  color: #1478dd;
+}
+
+@media only screen and (max-width: 600px) {
+  .myButton {
+    padding: 14px;
+    font-size: 18px;
+  }
 }

@@ -13,3 +13,11 @@
 .myInput[type=text]:focus {
     background-color: #FCDA86;
 }
+
+@media only screen and (max-width: 600px) {
+    .myInput {
+        width: 100%;
+        min-width: 100%;
+        font-size: 21px;
+    }
+}

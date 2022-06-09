@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import "../styles/ProductItem.css";
+import { saveToFavoriteList } from "../redux/actions/saveFavoritesAction";
+import { connect } from "react-redux";
 
 const ProductItem = ({ hotel }) => {
+  console.log("hotel", hotel);
   // Render component
   return (
     <>
@@ -11,8 +14,6 @@ const ProductItem = ({ hotel }) => {
           <img
             src={hotel.max_photo_url}
             className="productImage"
-            width="200"
-            height="200"
           />
           <div className="product-info">
             <h1>{hotel.hotel_name}</h1>
@@ -36,7 +37,13 @@ const ProductItem = ({ hotel }) => {
                 hotel.city_name_en +
                 ", " +
                 hotel.country_trans}
-              <span>‎&nbsp; ({hotel.distances[0].text})‬</span>
+              <span>
+                ‎&nbsp; (
+                {hotel.distance_to_cc
+                  ? hotel.distance_to_cc + " km from city center."
+                  : "2km"}
+                )‬
+              </span>
             </h4>
 
             <div className="room-types">
@@ -50,9 +57,10 @@ const ProductItem = ({ hotel }) => {
               <span className="room_price">
                 Starts from: &nbsp;
                 <b>
-                  {
-                    Math.ceil(hotel.composite_price_breakdown.all_inclusive_amount.value)
-                  }{""}
+                  {Math.ceil(
+                    hotel.composite_price_breakdown.all_inclusive_amount.value
+                  )}
+                  {""}
                   &nbsp;{" "}
                   {
                     hotel.composite_price_breakdown.all_inclusive_amount
@@ -61,7 +69,7 @@ const ProductItem = ({ hotel }) => {
                 </b>
               </span>
             </div>
-            <span style={{ marginLeft: 20 }}>
+            <span className="mapLink" style={{ marginLeft: 20 }}>
               <Link
                 to="/map"
                 state={{ from: hotel.latitude + "," + hotel.longitude }}
@@ -69,6 +77,9 @@ const ProductItem = ({ hotel }) => {
                 &nbsp; &nbsp; &nbsp; Check location on map
               </Link>
             </span>
+            <button onClick={() => saveToFavoriteList(hotel)}>
+              Add to Favorites
+            </button>
           </div>
         </div>
       </div>
@@ -76,4 +87,4 @@ const ProductItem = ({ hotel }) => {
   );
 };
 
-export default ProductItem;
+export default connect(null, { saveToFavoriteList })(ProductItem);

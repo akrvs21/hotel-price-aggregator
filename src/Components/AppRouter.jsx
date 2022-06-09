@@ -7,9 +7,9 @@ const AppRouter = () => {
   return ( 
     <div>
       <Routes>
-        <Route path="/hotels" element={<ProductList />} />
+        <Route path="/hotel-price-aggregator" element={<ProductList />} />
         <Route path="/map" element={<MapContainer />} />
-        <Route path="*" element={<Navigate to="/hotels" replace />} />
+        <Route path="*" element={<Navigate to="/hotel-price-aggregator" replace />} />
       </Routes>
     </div>
   );

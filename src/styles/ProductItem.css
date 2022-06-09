@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@1,700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Jost&family=Libre+Baskerville&family=Oxygen&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Racing+Sans+One&display=swap");
 
 .outter-container {
   clear: both;
@@ -18,6 +19,8 @@
 
 .productImage {
   flex: 0 0 auto;
+  width: 200px;
+  height: 200px;
 }
 
 .product-info {
@@ -31,6 +34,7 @@
   align-self: flex-start;
   margin-left: 40px;
   width: 80%;
+  font-size: 24px;
 }
 
 .product-info h4 {
@@ -38,6 +42,7 @@
   align-self: flex-start;
   margin: 15px 40px;
   display: inline;
+  font-size: 15px;
 }
 
 .product-info h4 span {
@@ -102,4 +107,70 @@
   color: #042080;
   letter-spacing: 0.2px;
   border-radius: 5px;
+}
+
+.product-info button {
+  align-self: end;
+  width: 22%;
+  padding: 8px;
+  font-size: 18px;
+  font-family: "Racing Sans One", cursive;
+  letter-spacing: 0.6px;
+  cursor: pointer;
+  background-color: #fae528;
+  color: #372a42;
+  border: 2px solid #1478dd;
+}
+
+@media only screen and (max-width: 600px) {
+  .productImage {
+    width: 150px;
+    height: 200px;
+  }
+  .inner-container {
+    width: 100%;
+  }
+  .product-info h1 {
+    font-size: 11px;
+    margin-left: 20px;
+    width: 69%;
+  }
+  .ratings_word {
+    display: none;
+  }
+  .ratings {
+    font-size: 10px;
+  }
+  .product-info h4 {
+    font-size: 9px;
+    margin: 15px 20px;
+  }
+  .room-types {
+    display: none;
+  }
+  .room_price {
+    font-size: 13px;
+  }
+  .room_price b {
+    font-size: 15px;
+  }
+  .product-info button {
+    /* align-self: center; */
+    width: 70%;
+    padding: 3px;
+    margin-top: 20px;
+    margin-right: 20px;
+    font-size: 16px;
+  }
+  .mapLink {
+    margin-top: 10px;
+    font-size: 13px;
+    align-self: flex-end;
+  }
+  .inner-container {
+    border-radius: 0px;
+  }
+  .outter-container {
+    margin-bottom: 15px;
+  }
 }
